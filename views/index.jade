@@ -1,0 +1,13 @@
+doctype html
+html(ng-app='resumeApp')
+	head
+		title= title
+		link(rel='stylesheet', href='/content/stylesheets/style.css')
+		script(src="/lib/angular/angular.min.js")
+		script(src="/lib/angular-route/angular-route.min.js")
+		script(src="/content/javascripts/clientAPI.js")
+		script(src="/content/javascripts/controllers/experience.js")
+	body
+		h1 Timothy Brantley
+		div(ng-view)
+		div(class="footer")
