@@ -4,7 +4,7 @@ homeApp.config(['$routeProvider',
 	function($routeProvider) {
 		$routeProvider
 			.when('/', {
-				templateUrl: 'content/partials/ignore.html',
+				templateUrl: 'content/partials/experience.html',
 				controller: 'experience'
 			})
 			.otherwise({

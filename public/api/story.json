@@ -1,0 +1,44 @@
+{
+	"name" : "Resume",
+	"author" : "Timothy Brantley II",
+	"Nodes" : 
+	[{
+		"id" : 1,
+		"title" : "Experience",
+		"story" : "This is some story I have right here"
+	},{
+		"id" : 2,
+		"title" : "Experience",
+		"story" : "You're going to be so impressed"
+	},{
+		"id" : 3,
+		"title" : "Experience",
+		"story" : "This is some story I have right here "
+	},{
+		"id" : 4,
+		"title" : "Experience",
+		"story" : "This is some story I have right here",
+		"audio" : "location"
+	},{
+		"id" : 5,
+		"title" : "Experience",
+		"story" : "This is some story I have right here "
+	},{
+		"id" : 6,
+		"title" : "Experience",
+		"story" : "This is some story I have right here "
+	},{
+		"id" : 7,
+		"title" : "Experience",
+		"story" : "This is some story I have right here "
+	},{
+		"id" : 8,
+		"title" : "Experience",
+		"story" : "This is some story I have right here "
+	}],
+	"relationships": [{
+		"paths" : [1,2,5,6,7,5,6],
+		"paths" : [1,3,4,4,1,3,3],
+		"paths" : [1,4,5,6,7,8,3]
+	}]
+}
