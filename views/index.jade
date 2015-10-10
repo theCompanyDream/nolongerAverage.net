@@ -1,13 +1,15 @@
 doctype html
-html(ng-app='resumeApp')
+html(ng-app='baseApp')
 	head
 		title= title
-		link(rel='stylesheet', href='/content/stylesheets/style.css')
+		meta(name="viewport", content="width=device-width, initial-scale=1")
+		link(rel='stylesheet', href='/content/stylesheets/syndney.css')
 		link(rel="stylesheet", href="/lib/bootstrap/dist/css/bootstrap-theme.min.css")
 		script(src="/lib/angular/angular.min.js")
 		script(src="/lib/angular-route/angular-route.min.js")
-		script(src="/content/javascripts/clientAPI.js")
+		script(src="/content/javascripts/baseApp.js")
 		script(src="/content/javascripts/controllers/experience.js")
+		script(src="/content/javascripts/controllers/aboutMe.js")
 	body
 		div(ng-view)
 		div(class="footer")
