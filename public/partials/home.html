@@ -1,3 +1,11 @@
-<ul ng-model="menu" class="themeList">
-	<li>{{item}}</li>
+
+<nav class="navbar navbar-default">
+<ul class "nav navbar-nav">
+	<li class="navbar-text" ng-repeat="menuItem in menus">
+		<a class="navbar-brand" href="/{{menuItem.location}}">{{menuItem.name}}</a>
+	</li>
 </ul>
+	<span class ="icon-bar"></span>
+</nav>
+
+<h2>{{title}}</h2>
