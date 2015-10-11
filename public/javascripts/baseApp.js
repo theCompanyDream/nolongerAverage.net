@@ -34,7 +34,7 @@ baseApp.config(['$routeProvider', "$locationProvider",
 baseApp.controller("homePage", ["$scope", function($scope) {
 	$scope.title = "Timothy Brantley super awesome website :)";
 	$scope.description = "This website is here to show case my ability as a developer";
-	$scope.showHeader = false;
+	$scope.showHeader = true;
 	$scope.headerImage = "/content/images/1.jpg";
 
 	$scope.sliderPhrases = 
@@ -45,7 +45,7 @@ baseApp.controller("homePage", ["$scope", function($scope) {
 		"It's bigger than you thought?"
 	];
 
-	$scope.startingPoint = "Shall we begin ?";
+	$scope.startingPoint = "Press This";
 	//seconds timer
 	$scope.interval = 3000; 
 
@@ -57,9 +57,8 @@ baseApp.controller("homePage", ["$scope", function($scope) {
 	,{name:"Story", location: "story"}
 	,{name: "Contact Us", location: "contact"}];
 
-	$scope.toggleHeader = function () {
-		console.log("i am running");
-		$scope.showHeader = $scope.showHeader ? false : true;
+	$scope.toggleHeader = function (location) {
+		$scope.showHeader = (location == "Home") ? true : false;
 	}
 
 }]);
