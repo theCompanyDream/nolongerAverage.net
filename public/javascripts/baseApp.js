@@ -1,4 +1,4 @@
-var baseApp = angular.module('baseApp', ['ngRoute']);
+var baseApp = angular.module('baseApp', ['ngRoute', 'ui.bootstrap']);
 
 baseApp.config(['$routeProvider', "$locationProvider",
 	function($routeProvider, $locationProvider) {
@@ -35,6 +35,19 @@ baseApp.controller("homePage", ["$scope", function($scope) {
 	$scope.title = "Timothy Brantley super awesome website :)";
 	$scope.description = "This website is here to show case my ability as a developer";
 	$scope.showHeader = false;
+	$scope.headerImage = "/content/images/1.jpg";
+
+	$scope.sliderPhrases = 
+	[
+		"What could be here?",
+		"Is this the End?",
+		"Come Find out what I have inside?",
+		"It's bigger than you thought?"
+	];
+
+	$scope.startingPoint = "Shall we begin ?";
+	//seconds timer
+	$scope.interval = 3000; 
 
 	$scope.menus = [
 	{name:"Home", location: "#"}
@@ -43,8 +56,6 @@ baseApp.controller("homePage", ["$scope", function($scope) {
 	,{name:"API", location: "api"}
 	,{name:"Story", location: "story"}
 	,{name: "Contact Us", location: "contact"}];
-
-	$scope.startingPoint = "Shall we begin ?";
 
 	$scope.toggleHeader = function () {
 		console.log("i am running");

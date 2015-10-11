@@ -1,48 +1,63 @@
-	<a class="skip-link screen-reader-text">{{title}}</a>
-	<header id="masthead" class="site-header float-header" role="banner">
-		<div class="header-wrap">
-            <div class="container-fluid">
-                <div class="row">
-					<div class="col-xs-12 col-sm-6 col-md-8">
-						<h1 class="site-title">{{title}}</h1>
-						<h2 class="site-description">{{description}}</h2>	
+<a class="skip-link screen-reader-text">{{title}}</a>
+<header id="masthead" class="site-header float-header" role="banner">
+	<div class="header-wrap">
+        <div class="container-fluid">
+            <div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-8">
+					<h1 class="site-title">{{title}}</h1>
+					<h2 class="site-description">{{description}}</h2>	
+				</div>
+				<div class="col-xs-6 col-md-4">
+					<div class="btn-menu">
+						<ul>
+							<li ng-repeat="menuItem in menus" ng-click="toggleHeader()">
+								<a class="" href="/{{menuItem.location}}" >{{menuItem.name}}</a>
+							</li>
+						</ul>
 					</div>
-					<div class="col-xs-6 col-md-4">
-						<div class="btn-menu">
-							<ul>
-								<li ng-repeat="menuItem in menus" ng-click="toggleHeader()">
-									<a class="" href="/{{menuItem.location}}" >{{menuItem.name}}</a>
-								</li>
-							</ul>
-						</div>
-						<nav id="mainnav" class ="mainnav" role="navigation">
-							<ul>
-								<li ng-repeat="menuItem in menus" ng-click="toggleHeader()">
-									<a class="navbar-brand" href="/{{menuItem.location}}">{{menuItem.name}}</a>
-								</li>
-							</ul>
-						</nav><!-- #site-navigation -->
-					</div>
+					<nav id="mainnav" class ="mainnav" role="navigation">
+						<ul>
+							<li ng-repeat="menuItem in menus" ng-click="toggleHeader()">
+								<a class="navbar-brand" >{{menuItem.name}}</a>
+							</li>
+						</ul>
+					</nav><!-- #site-navigation -->
 				</div>
 			</div>
 		</div>
-	</header><!-- #masthead -->
-
-	<div class="header-image" ng-hide="showHeader">
-		<img class="header-inner" src="/content/images/1.jpg" />
 	</div>
+</header><!-- #masthead -->
+<!--
+	remove flex-slider text-slider-section
+	slides-container
+-->
 
-	<button href="#primary">{{startingPoint}}</button>
+<div class="header-slider">
+	<div class="text-slider-section">
+    	<ul interval="interval" class="slides-container" no-wrap="noWrapSlides">
+    		<li ng-repeat="slide in sliderPhrases" class="text-slider">
+    				<h2 class="maintitle">{{slide}}</h2>
+					<h3 class="subtitle">
+						{{startingPoint}}
+					</h3>	
+    		</li>
+    	</ul>
+	</div>
+</div>
 
-	<div id="content" class="page-wrap">
-		<div class="container content-wrapper">
-			<div class="row">
+<div class="header-image" ng-hide="showHeader">
+	<img class="header-inner" src="{{headerImage}}" />
+</div>
 
-			</div>
+<div id="content" class="page-wrap">
+	<div class="container content-wrapper">
+		<div class="row">
+
 		</div>
-		<footer id="colophon" class="site-footer" role="contentinfo">
-			<div class="site-info container">
-				<a class="navbar-brand" href="/{{menuItem.location}}">{{menuItem.name}}</a>
-			</div><!-- .site-info -->
-		</footer><!-- #colophon -->
-	</div><!-- #content -->
+	</div>
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="site-info container">
+			<a class="navbar-brand" href="/{{menuItem.location}}">{{menuItem.name}}</a>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+</div><!-- #content -->

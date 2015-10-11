@@ -4,14 +4,22 @@ html(ng-app='baseApp')
 		title= title
 		meta(name="viewport", content="width=device-width, initial-scale=1")
 		link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css")
-		link(rel='stylesheet', href='/content/stylesheets/syndney.css')
 		script(src="/lib/angular/angular.min.js")
+		script(src="/lib/angular-animate/angular-animate.min.js")
 		script(src="/lib/angular-route/angular-route.min.js")
 		script(src="/lib/angular-ui-bootstrap/ui-bootstrap.js")
 		link(rel="stylesheet", href="/lib/angular-ui-bootstrap/ui-bootstrap-csp.css")
+		
+		// The javascript and css 
 		script(src="/content/javascripts/baseApp.js")
 		script(src="/content/javascripts/controllers/experience.js")
 		script(src="/content/javascripts/controllers/aboutMe.js")
+
+		link(rel='stylesheet', href='/content/stylesheets/syndney.css')
+		script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.js")
+		script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-animate.js")
+		script(src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.14.0.js")
+		link(href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet")
 	body(class ="home blog")
 		div(ng-view, id="page", class="hfeed site")
 		base(href="/")
