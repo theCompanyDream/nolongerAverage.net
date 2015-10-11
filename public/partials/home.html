@@ -10,14 +10,14 @@
 					<div class="col-xs-6 col-md-4">
 						<div class="btn-menu">
 							<ul>
-								<li ng-repeat="menuItem in menus">
-									<a class="" href="/{{menuItem.location}}">{{menuItem.name}}</a>
+								<li ng-repeat="menuItem in menus" ng-click="toggleHeader()">
+									<a class="" href="/{{menuItem.location}}" >{{menuItem.name}}</a>
 								</li>
 							</ul>
 						</div>
 						<nav id="mainnav" class ="mainnav" role="navigation">
 							<ul>
-								<li ng-repeat="menuItem in menus">
+								<li ng-repeat="menuItem in menus" ng-click="toggleHeader()">
 									<a class="navbar-brand" href="/{{menuItem.location}}">{{menuItem.name}}</a>
 								</li>
 							</ul>
@@ -28,7 +28,7 @@
 		</div>
 	</header><!-- #masthead -->
 
-	<div class="header-image" ng-show="showHeader">
+	<div class="header-image" ng-hide="showHeader">
 		<img class="header-inner" src="/content/images/1.jpg" />
 	</div>
 

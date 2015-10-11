@@ -34,16 +34,21 @@ baseApp.config(['$routeProvider', "$locationProvider",
 baseApp.controller("homePage", ["$scope", function($scope) {
 	$scope.title = "Timothy Brantley super awesome website :)";
 	$scope.description = "This website is here to show case my ability as a developer";
-	$scope.showHeader = true;
+	$scope.showHeader = false;
 
 	$scope.menus = [
 	{name:"Home", location: "#"}
-	,{name: "About Me", location: "aboutme"}
+	,{name: "About", location: "aboutme"}
 	,{name:"Events", location: "events"}
 	,{name:"API", location: "api"}
 	,{name:"Story", location: "story"}
-	,{name: "Contact Me", location: "contact"}];
+	,{name: "Contact Us", location: "contact"}];
 
 	$scope.startingPoint = "Shall we begin ?";
+
+	$scope.toggleHeader = function () {
+		console.log("i am running");
+		$scope.showHeader = $scope.showHeader ? false : true;
+	}
 
 }]);
