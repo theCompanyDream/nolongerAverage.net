@@ -19,6 +19,7 @@ Sydney is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic,
 /*--------------------------------------------------------------
 Social
 --------------------------------------------------------------*/
+
 .social-menu-widget {
 	padding: 0;
 	margin: 0 auto;
@@ -620,7 +621,7 @@ Header
 	}
 	.header-inner {
 
-	};
+	}
 	.site-title {
 		margin: 0;
 	}
@@ -677,6 +678,8 @@ Header
 	}
 	/* navigation */
 	#mainnav {
+		margin: 0;
+		padding: 0;
 		display: block;
 		float: right;
 		-webkit-transition: all 0.3s linear;
@@ -684,6 +687,7 @@ Header
 		    -ms-transition: all 0.3s linear;
 		     -o-transition: all 0.3s linear;
 		        transition: all 0.3s linear;
+
 	}
 	#mainnav ul {
 		list-style: none;
@@ -692,12 +696,14 @@ Header
 	}
 	#mainnav li {
 		float: left;
-		padding: 0 14px;
+		padding: 0 11px;
 	}
 	#mainnav ul ul li {
 		padding: 0;
 	}	
 	#mainnav ul li a {
+		margin-top: 0px;
+		padding: 0;
 		position: relative;
 		display: block;
 		font-size: 14px;
@@ -2880,9 +2886,7 @@ Panels
 		.masonry-layout .hentry {
 			width: 345px;
 		}
-		.header-wrap .col-md-8 {
-			padding: 0;
-		}
+
 		.last {
 			margin-bottom: 0 !important;
 		}
@@ -3042,7 +3046,7 @@ Panels
 			margin: 15px auto 0;
 		}
 		.header-wrap {
-			text-align: center;
+			text-align: center;	
 		}
 		#mainnav-mobi {
 			top: auto;
@@ -3089,45 +3093,3 @@ Panels
 			margin-bottom: 0;
 		}		
 	}	
-
-.info-container {
-	background-color: #fff;
-	margin-right: 20px;
-	padding: 60px 30px 90px;
-	margin-top: 20px;
-	border: 1px solid #e5e5e5;
-	text-align: center;
-}
-.info-container::before,
-.info-container::after {
-    content: '';
-    clear: both;
-    display: table;
-}
-.info-title {
-	margin: 0 0 45px;
-	text-transform: uppercase;
-}
-.info-icon {
-	font-size: 34px;
-	width: auto;
-	height: auto;
-}
-.info-text {
-	text-transform: uppercase;
-}
-.info-text a {
-	color: #444;
-	text-decoration: none;
-}
-.info-text a:hover {
-	color: #00b9eb;
-}
-.info-block {
-	float: left;
-	width: 45%;
-	border: 1px solid #eaeaea;
-    padding: 25px 15px 15px;
-    margin: 1%;
-    background-color: #f7f7f7;
-}

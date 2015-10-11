@@ -1,19 +1,28 @@
-<div id="page">
-	<a class="skip-link screen-reader-text"></a>
-	<header id="masthead" class="site-header">
+	<a class="skip-link screen-reader-text">{{title}}</a>
+	<header id="masthead" class="site-header float-header" role="banner">
 		<div class="header-wrap">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
-				<div class="col-md-4 col-sm-8 col-xs-12">
-				</div>
-				<div class="col-md-8 col-sm-4 col-xs-12">
-					<div class="btn-menu"></div>
-					<nav id="mainnav" class="mainnav" role="navigation">
-						<li ng-repeat="menuItem in menus">
-							<a class="navbar-brand" href="/{{menuItem.location}}">{{menuItem.name}}</a>
-						</li>
-					</nav><!-- #site-navigation -->
-				</div>
+					<div class="col-xs-12 col-sm-6 col-md-8">
+						<h1 class="site-title">{{title}}</h1>
+						<h2 class="site-description">{{description}}</h2>	
+					</div>
+					<div class="col-xs-6 col-md-4">
+						<div class="btn-menu">
+							<ul>
+								<li ng-repeat="menuItem in menus">
+									<a class="" href="/{{menuItem.location}}">{{menuItem.name}}</a>
+								</li>
+							</ul>
+						</div>
+						<nav id="mainnav" class ="mainnav" role="navigation">
+							<ul>
+								<li ng-repeat="menuItem in menus">
+									<a class="navbar-brand" href="/{{menuItem.location}}">{{menuItem.name}}</a>
+								</li>
+							</ul>
+						</nav><!-- #site-navigation -->
+					</div>
 				</div>
 			</div>
 		</div>
@@ -23,5 +32,17 @@
 		<img class="header-inner" src="/content/images/1.jpg" />
 	</div>
 
-	<div ng-include src="content/partials/footer.html"></div>
-</div>
+	<button href="#primary">{{startingPoint}}</button>
+
+	<div id="content" class="page-wrap">
+		<div class="container content-wrapper">
+			<div class="row">
+
+			</div>
+		</div>
+		<footer id="colophon" class="site-footer" role="contentinfo">
+			<div class="site-info container">
+				<a class="navbar-brand" href="/{{menuItem.location}}">{{menuItem.name}}</a>
+			</div><!-- .site-info -->
+		</footer><!-- #colophon -->
+	</div><!-- #content -->
