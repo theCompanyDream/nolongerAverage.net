@@ -1003,6 +1003,7 @@ Layout
 		color: #fff;
 	}
 	/* Page sider */
+
 	#page-slider {
 		position: relative;
 		height: 250px;
@@ -1063,19 +1064,17 @@ Slider Section
 	    background-size: cover;
 	}
 	.text-slider-section {
-		position: absolute;
-	    margin: 0;
-	    padding: 0;
 	    text-align: center;
 	    z-index: 2;
 	    width: 100%;
-		min-height: 260px;
-		padding-top: 5px;
+	    /** I might need this again 
+	    	TODO Keep or boot :P
 	    -webkit-transform: translateY(-50%);
 	       -moz-transform: translateY(-50%);
 	        -ms-transform: translateY(-50%);
 	         -o-transform: translateY(-50%);
 	            transform: translateY(-50%);
+	    */
 	}
 	.text-slider .maintitle,
 	.text-slider .subtitle {
@@ -1102,12 +1101,19 @@ Slider Section
 		height: 1px;
 		margin-left: -20%;
 	}
+
 	.text-slider .subtitle {
 		font-size: 30px;
 		line-height: 40px;
 		padding: 20px 0 50px;
 		font-weight: 300;
 	}
+
+	.slides-container * > .carousel-indicators,
+	.slides-container * > .carousel-control { 
+    	display: none;
+  	}
+
 /*--------------------------------------------------------------
 Page title
 --------------------------------------------------------------*/

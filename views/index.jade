@@ -16,10 +16,9 @@ html(ng-app='baseApp')
 		script(src="/content/javascripts/controllers/aboutMe.js")
 
 		link(rel='stylesheet', href='/content/stylesheets/syndney.css')
-		script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.js")
-		script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-animate.js")
+		// Figure out why I can't import Angular bootstrap UI
 		script(src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.14.0.js")
-		link(href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet")
+
 	body(class ="home blog")
 		div(ng-view, id="page", class="hfeed site")
 		base(href="/")

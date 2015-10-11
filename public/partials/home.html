@@ -33,15 +33,17 @@
 -->
 
 <div class="header-slider">
-	<div class="text-slider-section">
-    	<ul interval="interval" class="slides-container" no-wrap="noWrapSlides">
-    		<li ng-repeat="slide in sliderPhrases" class="text-slider">
+	<div class="slides-container text-slider-section">
+    	<uib-carousel interval="interval" no-wrap="noWrapSlides">
+    		<uib-slide ng-repeat="slide in sliderPhrases" class="text-slider">
+    			<div class="slide-item">
     				<h2 class="maintitle">{{slide}}</h2>
 					<h3 class="subtitle">
 						{{startingPoint}}
 					</h3>	
-    		</li>
-    	</ul>
+				</div>
+    		</uib-slide>
+    	</uib-carousel>
     	<a class="roll-button button-slider">{{startingPoint}}</a>
 	</div>
 </div>
