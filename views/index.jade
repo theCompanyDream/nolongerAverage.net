@@ -18,9 +18,7 @@ html(ng-app='baseApp')
 		link(rel='stylesheet', href='/content/stylesheets/syndney.css')
 		// Figure out why I can't import Angular bootstrap UI
 		script(src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.14.0.js")
-
 	body(class ="home blog")
-		//Here generates the label :) 
 		include ./header.jade
 			div(ng-view)
 			footer(ng-model="menus", class="site-footer", role="contentinfo")

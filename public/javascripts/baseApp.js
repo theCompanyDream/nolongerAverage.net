@@ -37,6 +37,12 @@ baseApp.controller("homePage", ["$scope", function($scope) {
 	$scope.showHeader = true;
 	$scope.headerImage = "/content/images/1.jpg";
 
+	$scope.toggerHeader = function(menuItem)
+	{
+		console.log(menuItem);
+		$scope.showHeader = (menuItem == "Home") ? true : false;
+	}
+
 	$scope.sliderPhrases = 
 	[
 		"What could be here?",
