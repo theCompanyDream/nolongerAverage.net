@@ -21,26 +21,9 @@ html(ng-app='baseApp')
 
 	body(class ="home blog")
 		//Here generates the label :) 
-		div(class="hfeed site", ng-controller="homePage")
-			a(class="skip-link screen-reader-text") {{title}}
-			header(id="masthead", class="site-header float-header", role="banner")
-				div(class="header-wrap")
-					div(class="container-fluid")
-						div(class="row")
-							div(class="col-xs-12 col-sm-6 col-md-8")
-								h1(class="site-title") {{title}}
-								h2(class="site-description") {{description}}
-							div(class="col-xs-6 col-md-4")
-								div(class="btn-menu")
-									ul
-										li(ng-repeat="menuItem in menus" ng-click="toggleHeader(menuItem.name)")
-										a(href="/{{menuItem.location}}") >{{menuItem.name}}
-								nav(id="mainnav", class ="mainnav", role="navigation")
-									ul
-										li(ng-repeat="menuItem in menus" ng-click="toggleHeader(menuItem.name)")
-											a(href="/{{menuItem.location}}") {{menuItem.name}}
+		include ./header.jade
 			div(ng-view)
-		footer(ng-model="menus", class="site-footer", role="contentinfo")
-			div(class="site-info container")
-				a(href="/{{menuItem.location}}") >{{menuItem.name}}
+			footer(ng-model="menus", class="site-footer", role="contentinfo")
+				div(class="site-info container")
+					a(href="/{{menuItem.location}}") >{{menuItem.name}}
 		base(href="/")

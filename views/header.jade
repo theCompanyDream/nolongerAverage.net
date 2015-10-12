@@ -1,0 +1,20 @@
+div(class="hfeed site", ng-controller="homePage")
+	a(class="skip-link screen-reader-text") {{title}}
+	header(class="site-header float-header", role="banner")
+		div(class="header-wrap")
+			div(class="container-fluid")
+				div(class="row")
+					div(class="col-xs-12 col-sm-6 col-md-8")
+						h1(class="site-title") {{title}}
+						h2(class="site-description") {{description}}
+					div(class="col-xs-6 col-md-4")
+						div(class="btn-menu")
+							ul
+								li(ng-repeat="menuItem in menus")
+								a(href="/{{menuItem.location}}") >{{menuItem.name}}
+						nav(id="mainnav", class ="mainnav", role="navigation")
+							ul
+								li(ng-repeat="menuItem in menus")
+									a(href="/{{menuItem.location}}") {{menuItem.name}}
+	div(class="header-image" ng-show="showHeader")
+		img(class="header-inner", src="{{headerImage}}")

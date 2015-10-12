@@ -56,8 +56,4 @@ baseApp.controller("homePage", ["$scope", function($scope) {
 	,{name:"API", location: "api"}
 	,{name:"Story", location: "story"}
 	,{name: "Contact Us", location: "contact"}];
-
-	$scope.toggleHeader = function (location) {
-		$scope.showHeader = (location == "Home") ? true : false;
-	}
 }]);
