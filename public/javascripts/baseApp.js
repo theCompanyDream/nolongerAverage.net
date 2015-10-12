@@ -20,7 +20,7 @@ baseApp.config(['$routeProvider', "$locationProvider",
 				controller: 'contactUs'
 			})
 			.when('/aboutme', {
-				templateUrl: 'content/partials/aboutme.html',
+				templateUrl: 'content/partials/aboutMe.html',
 				controller: 'aboutme'
 			})
 			.when('/', {
@@ -60,5 +60,4 @@ baseApp.controller("homePage", ["$scope", function($scope) {
 	$scope.toggleHeader = function (location) {
 		$scope.showHeader = (location == "Home") ? true : false;
 	}
-
 }]);
