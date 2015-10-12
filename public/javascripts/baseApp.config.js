@@ -1,13 +1,14 @@
 angular.module('baseApp')
-	.config(configureRoutes);
+	.config(config);
 
-configureRoutes.$inject = ['$routeProvider', "$locationProvider"];
+config.$inject = ['$routeProvider', "$locationProvider"];
 
-function configureRoutes($routeProvider, $locationProvider) {
+function config($routeProvider, $locationProvider) {
 	$routeProvider
 		.when('/', {
 			templateUrl: 'content/partials/home.html',
-			controller: 'homePage'
+			controller: 'homePageController',
+			controllerAs: 'vm'
 		})
 		.when('/events', {
 			templateUrl: 'content/partials/aboutme.html',

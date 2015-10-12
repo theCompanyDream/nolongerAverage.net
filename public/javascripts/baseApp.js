@@ -1,12 +1,11 @@
 angular.module('baseApp', ['ngRoute', 'ui.bootstrap'])
-	.controller("homePage", homePageController)
+	.controller("homePageController", homePageController)
 		.controller("notImplemented", notImplemented);
 
 homePageController.$inject = ['$scope'];
-notImplemented.$inject = ['$scope'];
+notImplemented.$inject = ['$scope']
 
 function homePageController($scope) {
-	console.log("running");
 	$scope.title = "Timothy Brantley super awesome website :)";
 	$scope.description = "This website is here to show case my ability as a developer";
 	$scope.showHeader = true;
@@ -15,7 +14,7 @@ function homePageController($scope) {
 	$scope.toggleHeader = function(menuItem)
 	{
 		$scope.showHeader = (menuItem == "Home") ? true : false;
-	}
+	};
 
 	$scope.sliderPhrases = 
 	[
@@ -36,9 +35,9 @@ function homePageController($scope) {
 	,{name: "Story", location: "novel"}
 	,{name: "API", location: "api"}
 	,{name: "Contact Us", location: "contact"}];
+
 }
 
 function notImplemented($scope) {
-	console.log("running");
 	$scope.title = "Sorry Not notImplemented";
 }

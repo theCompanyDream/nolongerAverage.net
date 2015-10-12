@@ -1,25 +1,11 @@
 angular.module("baseApp")
+	.factory("resumeFactory", resumeFactory)
 	.controller("aboutme", aboutMe)
 	.controller("contactUs", contactUs);
 
-aboutMe.$inject = ['$scope', '$http'];
-contactUs.$inject = ['$scope', '$http']
-
-function aboutMe($scope, $http) {
-
-	$http.get("/content/api/aboutme.json", 
-		[{
-			"Content-Type" : "application/json",
-			"Accept" : "application/json"
-		}]
-	).success(function(json) {
-		var data = angular.fromJson(json);
-		$scope.title = data.title;
-		$scope.description = data.description;
-	}).error(function (err){
-		console.log(err);
-	});
-}
+resumeFactory.$inject = ['$http'];
+aboutMe.$inject = ['$scope','resumeFactory'];
+contactUs.$inject = ['$scope'];
 
 function contactUs($scope, $http) {
 		$scope.facebook = "https://www.facebook.com/tbrantleyII";
@@ -27,29 +13,37 @@ function contactUs($scope, $http) {
 		$scope.email = "brantleyiit@gmail.com";
 }
 
-function contactService()
-{
+function resumeFactory($http) {
+	function getResInfo()
+	{
+		return $http.get("/content/api/aboutme.json", 
+				[{
+					"Content-Type" : "application/json",
+					"Accept" : "application/json"
+				}]
+				).success(success);
+
+				function success(response){
+					return response;
+				}
+	};
 	var service = {
-		GET: GET
+		GET: getResInfo
 	};
-	 
+
 	return service;
-
-	function GET() {
-
-	};
 }
 
-function getResumeDetails(){
+function aboutMe($scope, resumeFactory) {
+	var vm = this;
+	vm.title = "";
+	vm.description = "";
 
-	var service = {
-		GET: GET
-	};
-
-	return service;
-
-	function GET() {
-
-	};
+	resumeFactory.GET()
+		.then(function (json) {
+	 		var data = json.data;
+	 	    $scope.title = data.title;
+	 	    $scope.description = data.description;
+	 	  });
 
 }

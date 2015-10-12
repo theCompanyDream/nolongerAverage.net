@@ -1,4 +1,4 @@
-div(class="hfeed site", ng-controller="homePage")
+div(class="hfeed site", ng-controller="homePageController")
 	a(class="skip-link screen-reader-text") {{title}}
 	header(class="site-header float-header", role="banner")
 		div(class="header-wrap")
@@ -11,7 +11,7 @@ div(class="hfeed site", ng-controller="homePage")
 						div(class="btn-menu")
 							ul
 								li(ng-repeat="menuItem in menus", ng-click="toggleHeader(menuItem.name)")
-								a(href="/{{menuItem.location}}"){{menuItem.name}}
+								a(href="/{{menuItem.location}}") {{menuItem.name}}
 						nav(id="mainnav", class ="mainnav", role="navigation")
 							ul
 								li(ng-repeat="menuItem in menus", ng-click="toggleHeader(menuItem.name)")
