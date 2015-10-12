@@ -1,45 +1,47 @@
-var baseApp = angular.module('baseApp', ['ngRoute', 'ui.bootstrap']);
+angular.module('baseApp', ['ngRoute', 'ui.bootstrap'])
+	.config(['$routeProvider', "$locationProvider", configureRoutes])
+		.controller("homePage", ["$scope", homePageController])
+			.controller("notImplemented", ["$scope", notImplemented]);
 
-baseApp.config(['$routeProvider', "$locationProvider",
-	function($routeProvider, $locationProvider) {
-		$routeProvider
-			.when('/story', {
-				templateUrl: 'content/partials/story/experience.html',
-				controller: 'experience'
-			})
-			.when('/events', {
-				templateUrl: 'content/partials/home.html',
-				controller: 'homePage'
-			})
-			.when('/api', {
-				templateUrl: 'content/partials/ignore.html',
-				controller: 'homePage'
-			})
-			.when('/contact', {
-				templateUrl: 'content/partials/contactUs.html',
-				controller: 'contactUs'
-			})
-			.when('/aboutme', {
-				templateUrl: 'content/partials/aboutMe.html',
-				controller: 'aboutme'
-			})
-			.when('/', {
-				templateUrl: 'content/partials/home.html',
-				controller: 'homePage'
-			});
+function configureRoutes($routeProvider, $locationProvider) {
+	$routeProvider
+		.when('/story', {
+			templateUrl: 'content/partials/story/aboutme.html',
+			controller: 'notImplemented'
+		})
+		.when('/events', {
+			templateUrl: 'content/partials/aboutme.html',
+			controller: 'notImplemented'
+		})
+		.when('/api', {
+			templateUrl: 'content/partials/aboutme.html',
+			controller: 'notImplemented'
+		})
+		.when('/contact', {
+			templateUrl: 'content/partials/contactUs.html',
+			controller: 'contactUs'
+		})
+		.when('/aboutme', {
+			templateUrl: '/content/partials/aboutMe.html',
+			controller: 'aboutme'
+		})
+		.when('/', {
+			templateUrl: 'content/partials/home.html',
+			controller: 'homePage'
+		});
 
-		$locationProvider.html5Mode(true);
-}]);
+	$locationProvider.html5Mode(true).hashPrefix("!");
+}
 
-baseApp.controller("homePage", ["$scope", function($scope) {
+function homePageController($scope) {
+
 	$scope.title = "Timothy Brantley super awesome website :)";
 	$scope.description = "This website is here to show case my ability as a developer";
 	$scope.showHeader = true;
 	$scope.headerImage = "/content/images/1.jpg";
 
-	$scope.toggerHeader = function(menuItem)
+	$scope.toggleHeader = function(menuItem)
 	{
-		console.log(menuItem);
 		$scope.showHeader = (menuItem == "Home") ? true : false;
 	}
 
@@ -58,8 +60,13 @@ baseApp.controller("homePage", ["$scope", function($scope) {
 	$scope.menus = [
 	{name:"Home", location: "#"}
 	,{name: "About", location: "aboutme"}
+	,{name:"Story", location: "story"}
 	,{name:"Events", location: "events"}
 	,{name:"API", location: "api"}
-	,{name:"Story", location: "story"}
 	,{name: "Contact Us", location: "contact"}];
-}]);
+}
+
+function notImplemented($scope) {
+		console.log("totally running");
+		$scope.title = "Sorry Not notImplemented";
+}

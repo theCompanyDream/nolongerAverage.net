@@ -1,4 +1,4 @@
-var experienceControllers = angular.module('experienceController', []);
+var experienceControllers = angular.module('storyModule', []);
 
 experienceControllers.controller('experience', ['$scope', '$routeParams','$http',
 	function($scope, $routeParams, $http) {

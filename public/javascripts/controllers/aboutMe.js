@@ -1,10 +1,11 @@
-var homePage = angular.module("baseApp");
+angular.module("baseApp")
+	.controller("aboutme", ["$scope", "$http", aboutme])
+	.controller("contactUs", ["$scope", contactUs]);
 
 homePage.service('userInfoService',["$http", function($http){
 	this.GET = function(data) {
-		$http.get({
-			url: 'http://localhost:7000/content/api/aboutme.json'
-		}).success(function(json) {
+		$http.get('http://localhost:7000/content/api/aboutme.json', []
+		).success(function(json) {
 			console.log(json);
 			data(json);
 		}).error(function (err){
@@ -13,20 +14,25 @@ homePage.service('userInfoService',["$http", function($http){
 	}
 }]);
 
-homePage.controller("aboutme", ["$scope", "$http",
-	function($scope, $http){
-		$http.get("/content/api/aboutme.json", []
+function aboutMe($scope, $http) {
+		$http.get("/content/api/aboutme.json", 
+			[{
+				"Content-Type" : "application/json",
+				"Accept" : "application/json"
+			}]
 		).success(function(json) {
-			console.log(json);
-			$scope.data = json;
+			var data = angular.fromJson(json);
+			$scope.title = data.title;
+			$scope.description = data.description;
 		}).error(function (err){
 			console.log(err);
 		});
-}]);
 
-homePage.controller("contactUs", ["$scope",
-	function($scope, $http) {
+		$scope.title = "I worked";
+}
+
+function contactUs($scope, $http) {
 		$scope.facebook = "https://www.facebook.com/tbrantleyII";
 		$scope.lolking = "http://www.lolking.net/summoner/na/21692904";
 		$scope.email = "brantleyiit@gmail.com";
-}]);
+}
