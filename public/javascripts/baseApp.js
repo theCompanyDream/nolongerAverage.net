@@ -1,40 +1,12 @@
 angular.module('baseApp', ['ngRoute', 'ui.bootstrap'])
-	.config(['$routeProvider', "$locationProvider", configureRoutes])
-		.controller("homePage", ["$scope", homePageController])
-			.controller("notImplemented", ["$scope", notImplemented]);
+	.controller("homePage", homePageController)
+		.controller("notImplemented", notImplemented);
 
-function configureRoutes($routeProvider, $locationProvider) {
-	$routeProvider
-		.when('/story', {
-			templateUrl: 'content/partials/story/aboutme.html',
-			controller: 'notImplemented'
-		})
-		.when('/events', {
-			templateUrl: 'content/partials/aboutme.html',
-			controller: 'notImplemented'
-		})
-		.when('/api', {
-			templateUrl: 'content/partials/aboutme.html',
-			controller: 'notImplemented'
-		})
-		.when('/contact', {
-			templateUrl: 'content/partials/contactUs.html',
-			controller: 'contactUs'
-		})
-		.when('/aboutme', {
-			templateUrl: '/content/partials/aboutMe.html',
-			controller: 'aboutme'
-		})
-		.when('/', {
-			templateUrl: 'content/partials/home.html',
-			controller: 'homePage'
-		});
-
-	$locationProvider.html5Mode(true).hashPrefix("!");
-}
+homePageController.$inject = ['$scope'];
+notImplemented.$inject = ['$scope'];
 
 function homePageController($scope) {
-
+	console.log("running");
 	$scope.title = "Timothy Brantley super awesome website :)";
 	$scope.description = "This website is here to show case my ability as a developer";
 	$scope.showHeader = true;
@@ -58,15 +30,15 @@ function homePageController($scope) {
 	$scope.interval = 3000; 
 
 	$scope.menus = [
-	{name:"Home", location: "#"}
+	 {name: "Home", location: "#"}
 	,{name: "About", location: "aboutme"}
-	,{name:"Story", location: "story"}
-	,{name:"Events", location: "events"}
-	,{name:"API", location: "api"}
+	,{name: "Events", location: "events"}
+	,{name: "Story", location: "novel"}
+	,{name: "API", location: "api"}
 	,{name: "Contact Us", location: "contact"}];
 }
 
 function notImplemented($scope) {
-		console.log("totally running");
-		$scope.title = "Sorry Not notImplemented";
+	console.log("running");
+	$scope.title = "Sorry Not notImplemented";
 }
