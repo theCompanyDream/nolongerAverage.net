@@ -1,9 +1,11 @@
-angular.module('baseApp', ['ngRoute', 'ui.bootstrap'])
+angular.module('baseApp', ['ngRoute', 'ui.bootstrap', 'ngSanitize'])
 	.controller("homePageController", homePageController)
-		.controller("notImplemented", notImplemented);
+		.controller("notImplemented", notImplemented)
+			.controller("splashPageController", splashPageController);
 
 homePageController.$inject = ['$scope'];
-notImplemented.$inject = ['$scope']
+notImplemented.$inject = ['$scope'];
+splashPageController.$inject = ['$scope'];
 
 function homePageController($scope) {
 	$scope.title = "Timothy Brantley super awesome website :)";
@@ -15,18 +17,6 @@ function homePageController($scope) {
 	{
 		$scope.showHeader = (menuItem == "Home") ? true : false;
 	};
-
-	$scope.sliderPhrases = 
-	[
-		"What could be here?",
-		"Is this the End?",
-		"Come Find out what I have inside?",
-		"It's bigger than you thought?"
-	];
-
-	$scope.startingPoint = "Press This";
-	//seconds timer
-	$scope.interval = 3000; 
 
 	$scope.menus = [
 	 {name: "Home", location: "#"}
@@ -40,4 +30,18 @@ function homePageController($scope) {
 
 function notImplemented($scope) {
 	$scope.title = "Sorry Not notImplemented";
+}
+
+function splashPageController($scope) {
+	$scope.sliderPhrases = 
+	[
+		"What could be here?",
+		"Is this the End?",
+		"Come Find out what I have inside?",
+		"It's bigger than you thought?"
+	];
+
+	$scope.startingPoint = "Press This";
+	//seconds timer
+	$scope.interval = 2000; 
 }

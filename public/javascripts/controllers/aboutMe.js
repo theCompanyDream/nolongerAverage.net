@@ -4,7 +4,7 @@ angular.module("baseApp")
 	.controller("contactUs", contactUs);
 
 resumeFactory.$inject = ['$http'];
-aboutMe.$inject = ['$scope','resumeFactory'];
+aboutMe.$inject = ['$scope','resumeFactory', '$sce'];
 contactUs.$inject = ['$scope'];
 
 function contactUs($scope, $http) {
@@ -34,7 +34,7 @@ function resumeFactory($http) {
 	return service;
 }
 
-function aboutMe($scope, resumeFactory) {
+function aboutMe($scope, resumeFactory, $sce) {
 	var vm = this;
 	vm.title = "";
 	vm.description = "";
@@ -43,7 +43,8 @@ function aboutMe($scope, resumeFactory) {
 		.then(function (json) {
 	 		var data = json.data;
 	 	    $scope.title = data.title;
-	 	    $scope.description = data.description;
-	 	  });
+	 	    $scope.description = $sce.trustAsHtml(data.description)
+	 	    $scope.experience = data.experience;
+	 	});
 
 }

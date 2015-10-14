@@ -7,8 +7,7 @@ function config($routeProvider, $locationProvider) {
 	$routeProvider
 		.when('/', {
 			templateUrl: 'content/partials/home.html',
-			controller: 'homePageController',
-			controllerAs: 'vm'
+			controller: 'splashPageController'
 		})
 		.when('/events', {
 			templateUrl: 'content/partials/aboutme.html',

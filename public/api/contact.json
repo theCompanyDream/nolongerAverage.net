@@ -2,8 +2,11 @@
 	"url" : "https://www.facebook.com/tbrantleyII",
 	"type" : "Facebook",
 	"description" : "this is my facebook link"
-	},{
+},{
 	"url" : "https://www.facebook.com/tbrantleyII",
 	"type" : "linkedIn",
 	"description" : "this is my facebook link"
-	}]
+},
+{
+	"type" : "GitHub"
+}]

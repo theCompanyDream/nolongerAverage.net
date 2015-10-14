@@ -1,10 +1,21 @@
-<article>
-	<header class="entry-header">
-		<h2 class="site-title">{{title}}</h2>
-	</header>
-	<div class="entry-content" ng-bind-html-unsafe="{{description}}">
-		<div ng-bind-html-unsafe="description">
-			
+<main class = "post-wrap content-area col-md-9 Right">
+	<article class ="post-36 post type-post status-publish format-standard hentry category-uncategorized">
+		<header class="entry-header">
+			<h2 class="title-post" ng-model="title"></h2>
+		</header>
+		<div class="entry-post">
+			<div ng-bind-html="description"></div>
+			<uib-accordion close-others="oneAtATime" ng-model="experience">
+				<uib-accordion-group heading ="{{exp.title}}" ng-repeat="exp in experience">
+					<h2>{{exp.Organization}}</h2>
+					<p ng-bind-html="exp.content"></p>
+					<span>
+						<time>{{exp.dateCreated}}</time> - <time>{{exp.dateEnded}}</time>
+					</span>
+				</uib-accordion-group>
+			</uib-accordion>
 		</div>
-	</div>
-</article>
+	</article>
+
+	<footer class="entry-footer"></footer>
+</main>
