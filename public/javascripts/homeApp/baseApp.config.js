@@ -17,10 +17,6 @@ function config($routeProvider, $locationProvider) {
 			templateUrl: 'content/partials/aboutme.html',
 			controller: 'notImplemented'
 		})
-		.when('/contact', {
-			templateUrl: 'content/partials/contactUs.html',
-			controller: 'contactUs'
-		})
 		.when('/aboutme', {
 			templateUrl: '/content/partials/aboutMe.html',
 			controller: 'aboutme'

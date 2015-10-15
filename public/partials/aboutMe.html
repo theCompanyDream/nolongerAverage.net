@@ -7,8 +7,11 @@
 			<div ng-bind-html="description"></div>
 			<uib-accordion close-others="oneAtATime" ng-model="experience">
 				<uib-accordion-group heading ="{{exp.title}}" ng-repeat="exp in experience">
-					<h2>{{exp.Organization}}</h2>
-					<p ng-bind-html="exp.content"></p>
+					<h3>{{exp.organization}}</h3>
+					<div>
+						<p ng-bind-html="exp.content"></p>
+						<a href="{{exp.link}}">{{exp.link}}</a>
+					</div>
 					<span>
 						<time>{{exp.dateCreated}}</time> - <time>{{exp.dateEnded}}</time>
 					</span>

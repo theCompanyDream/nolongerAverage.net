@@ -1,8 +1,12 @@
-angular.module('baseApp', ['ngRoute', 'ui.bootstrap', 'ngSanitize'])
-	.controller("homePageController", homePageController)
+angular.module("baseApp")
+	.factory("resumeFactory", resumeFactory)
+		.controller("homePageController", homePageController)
 		.controller("notImplemented", notImplemented)
-			.controller("splashPageController", splashPageController);
+			.controller("splashPageController", splashPageController)
+		.controller("aboutme", aboutMe);
 
+resumeFactory.$inject = ['$http'];
+aboutMe.$inject = ['$scope','resumeFactory', '$sce'];
 homePageController.$inject = ['$scope'];
 notImplemented.$inject = ['$scope'];
 splashPageController.$inject = ['$scope'];
@@ -37,11 +41,49 @@ function splashPageController($scope) {
 	[
 		"What could be here?",
 		"Is this the End?",
-		"Come Find out what I have inside?",
+		"Come find out what I have inside?",
 		"It's bigger than you thought?"
 	];
 
 	$scope.startingPoint = "Press This";
 	//seconds timer
 	$scope.interval = 2000; 
+}
+
+
+function resumeFactory($http) {
+	function getResInfo()
+	{
+		return $http.get("/content/api/aboutme.json", 
+				[{
+					"Content-Type" : "application/json",
+					"Accept" : "application/json"
+				}]
+				).success(success);
+
+				function success(response){
+					return response;
+				}
+	};
+	var service = {
+		GET: getResInfo
+	};
+
+	return service;
+}
+
+function aboutMe($scope, resumeFactory, $sce) {
+	var vm = this;
+	vm.title = "";
+	vm.description = "";
+	vm.Image = "";
+
+	resumeFactory.GET()
+		.then(function (json) {
+	 		var data = json.data;
+	 	    $scope.title = data.title;
+	 	    $scope.description = $sce.trustAsHtml(data.description)
+	 	    $scope.experience = data.experience;
+	 	});
+
 }
