@@ -1,12 +1,10 @@
 angular.module("baseApp")
-	.factory("resumeFactory", resumeFactory)
 		.controller("homePageController", homePageController)
 		.controller("notImplemented", notImplemented)
-			.controller("splashPageController", splashPageController)
+		.controller("splashPageController", splashPageController)
 		.controller("aboutme", aboutMe);
 
-resumeFactory.$inject = ['$http'];
-aboutMe.$inject = ['$scope','resumeFactory', '$sce'];
+aboutMe.$inject = ['$scope','app.common.resumeFactory', '$sce'];
 homePageController.$inject = ['$scope'];
 notImplemented.$inject = ['$scope'];
 splashPageController.$inject = ['$scope'];
@@ -48,28 +46,6 @@ function splashPageController($scope) {
 	$scope.startingPoint = "Press This";
 	//seconds timer
 	$scope.interval = 2000; 
-}
-
-
-function resumeFactory($http) {
-	function getResInfo()
-	{
-		return $http.get("/content/api/aboutme.json", 
-				[{
-					"Content-Type" : "application/json",
-					"Accept" : "application/json"
-				}]
-				).success(success);
-
-				function success(response){
-					return response;
-				}
-	};
-	var service = {
-		GET: getResInfo
-	};
-
-	return service;
 }
 
 function aboutMe($scope, resumeFactory, $sce) {
