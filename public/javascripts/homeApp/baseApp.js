@@ -1,1 +1,0 @@
-angular.module('baseApp', ['ngRoute', 'ui.bootstrap', 'ngSanitize','app.common.Info']);
