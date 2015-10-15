@@ -17,6 +17,7 @@ function resumeFactory($http) {
 					return response;
 				}
 	};
+
 	var service = {
 		GET: getResInfo
 	};

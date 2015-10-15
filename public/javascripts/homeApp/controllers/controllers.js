@@ -4,7 +4,7 @@ angular.module("baseApp")
 		.controller("splashPageController", splashPageController)
 		.controller("aboutme", aboutMe);
 
-aboutMe.$inject = ['$scope','app.common.resumeFactory', '$sce'];
+aboutMe.$inject = ['$scope','resumeFactory', '$sce'];
 homePageController.$inject = ['$scope'];
 notImplemented.$inject = ['$scope'];
 splashPageController.$inject = ['$scope'];
