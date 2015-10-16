@@ -19,7 +19,8 @@ keystone.init({
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
 	'view engine': 'jade',
-	
+
+	'mongo' : 'mongodb://localhost:27017/nolongeraveragenet2',
 	'auto update': true,
 	'session': true,
 	'auth': true,
@@ -50,8 +51,6 @@ keystone.set('routes', require('./routes'));
 
 keystone.set('nav', {
 	'posts': ['posts', 'post-categories'],
-	'galleries': 'galleries',
-	'enquiries': 'enquiries',
 	'ys': 'ys'
 });
 
