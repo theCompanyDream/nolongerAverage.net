@@ -2,5 +2,13 @@
   "db": {
     "name": "db",
     "connector": "memory"
+  },
+  "mongodb": {
+    "name": "mongodb",
+    "connector": "mongodb",
+    "database": "story",
+    "host" : "192.168.0.103",
+    "port" : "27017",
+    "debug" : "true"
   }
 }
