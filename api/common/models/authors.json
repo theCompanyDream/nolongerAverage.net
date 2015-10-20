@@ -1,0 +1,37 @@
+{
+  "name": "authors",
+  "plural": "authors",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "fname": {
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "string",
+      "required": true
+    },
+    "contactInfo": {
+      "type": [{
+         "siteName" : "string",
+         "sitelocation" : "string"
+        }]
+    },
+    "dateCreated": {
+      "type": "date",
+      "required": true
+    },
+    "lname": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
