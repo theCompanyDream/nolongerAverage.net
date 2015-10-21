@@ -1,4 +1,5 @@
 var angular = require('angular');
+require('angular-route')
 
 angular.module("app.common.Info", ['ngRoute'])
 	.factory("resumeFactory", resumeFactory);
@@ -26,3 +27,5 @@ function resumeFactory($http) {
 
 	return service;
 }
+
+module.exports = angular.module('resumeFactory');
