@@ -1,3 +1,6 @@
+var angular = require('angular');
+require('../../common/factory/resumeFactory');
+
 angular.module("baseApp")
 		.controller("homePageController", homePageController)
 		.controller("notImplemented", notImplemented)

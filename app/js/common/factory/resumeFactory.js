@@ -1,3 +1,5 @@
+var angular = require('angular');
+
 angular.module("app.common.Info", ['ngRoute'])
 	.factory("resumeFactory", resumeFactory);
 

@@ -1,6 +1,3 @@
-angular.module('baseApp')
-	.config(config);
-
 config.$inject = ['$routeProvider', "$locationProvider"];
 
 function config($routeProvider, $locationProvider) {
@@ -24,3 +21,5 @@ function config($routeProvider, $locationProvider) {
 
 	$locationProvider.html5Mode(true).hashPrefix("!");
 }
+
+module.exports = config;
