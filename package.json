@@ -2,9 +2,6 @@
   "name": "generator",
   "version": "0.0.2",
   "private": true,
-  "scripts": {
-    "start": "node ./bin/www"
-  },
   "dependencies": {
     "angular-bootstrap": "^0.12.2",
     "angular-sanitize": "^1.4.7",

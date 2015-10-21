@@ -6,44 +6,46 @@ export default {
   UIPort: 3001,
 
   sourceDir: './app/',
-  buildDir: './build/',
+  buildDir: './public/',
+  serverDir: './server/',
+  serverApp: './bin/app.js',
 
   styles: {
     src: 'app/styles/**/*.scss',
-    dest: 'build/css',
+    dest: 'public/css',
     prodSourcemap: false,
     sassIncludePaths: []
   },
 
   scripts: {
     src: 'app/js/**/*.js',
-    dest: 'build/js'
+    dest: 'public/js'
   },
 
   images: {
     src: 'app/images/**/*',
-    dest: 'build/images'
+    dest: 'public/images'
   },
 
   fonts: {
     src: ['app/fonts/**/*'],
-    dest: 'build/fonts'
+    dest: 'public/fonts'
   },
 
   views: {
-    index: 'app/index.html',
-    src: 'app/views/**/*.html',
-    dest: 'app/js'
+    index: 'server/views/*',
+    src: 'server/views/*',
+    dest: 'app/views'
   },
 
   gzip: {
-    src: 'build/**/*.{html,xml,json,css,js,js.map,css.map}',
-    dest: 'build/',
+    src: 'public/**/*.{html,xml,json,css,js,js.map,css.map,jade}',
+    dest: 'public/',
     options: {}
   },
 
   browserify: {
-    bundleName: 'main.js',
+    bundleName: 'app.js',
     prodSourcemap: false
   },
 

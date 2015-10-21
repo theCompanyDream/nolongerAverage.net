@@ -5,7 +5,7 @@ import url         from 'url';
 import browserSync from 'browser-sync';
 import gulp        from 'gulp';
 
-gulp.task('browserSync', function() {
+gulp.task('browserSync', ['nodemon'], function() {
 
   const DEFAULT_FILE = 'index.html';
   const ASSET_EXTENSIONS = ['js', 'css', 'png', 'jpg', 'jpeg', 'gif'];
@@ -13,6 +13,7 @@ gulp.task('browserSync', function() {
   browserSync.init({
     server: {
       baseDir: config.buildDir,
+      proxy: "http://localhost:69233",
       middleware: function(req, res, next) {
         let fileHrefArray = url.parse(req.url).href.split('.');
         let fileExtension = fileHrefArray[fileHrefArray.length - 1];
@@ -24,6 +25,7 @@ gulp.task('browserSync', function() {
         return next();
       }
     },
+    browser: "google chrome",
   	port: config.browserPort,
   	ui: {
     	port: config.UIPort
