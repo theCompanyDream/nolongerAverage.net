@@ -1,16 +1,14 @@
-'use strict';
-
 var angular = require('angular');
 require('angular-bootstrap');
 require('angular-sanitize');
-require('/factory/resumeFactory')
+require('./factory/resumeFactory');
 
 var configuration = require('./baseApp.config');
-var homePageController = require('/controller/homePage');
-var aboutPageController = require('/controller/aboutMe');
-var splashPageController = require('/controller/splashPage');
-var contactUsController = require('/controller/contactUs');
-var notImplemented = require('/controller/notImplemented');
+var homePageController = require('./controllers/homePage');
+var aboutPageController = require('./controllers/aboutMe');
+var splashPageController = require('./controllers/splashPage');
+var contactUsController = require('./controllers/contactUs');
+var notImplemented = require('./controllers/notImplemented');
 
 angular.module('baseApp', ['ngRoute', 'ui.bootstrap', 'ngSanitize','app.common.Info'])
 		.controller("homePageController", homePageController)

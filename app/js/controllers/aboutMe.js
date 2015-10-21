@@ -21,7 +21,7 @@ function aboutMe($scope, resumeFactory, $sce) {
 		.then(function (json) {
 	 		var data = json.data;
 	 	    $scope.title = data.title;
-	 	    $scope.description = $sce.trustAsHtml(data.description)
+	 	    $scope.description = $sce.trustAsHtml(data.description);
 	 	    $scope.experience = data.experience;
 	 	});
 

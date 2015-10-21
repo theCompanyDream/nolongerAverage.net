@@ -1,7 +1,9 @@
-var angular = require('angular');
-require('angular-route')
+var name = 'app.common.Info';
 
-angular.module("app.common.Info", ['ngRoute'])
+var angular = require('angular');
+require('angular-ui-router');
+
+angular.module(name, ['ngRoute'])
 	.factory("resumeFactory", resumeFactory);
 
 resumeFactory.$inject = ['$http'];
@@ -19,7 +21,7 @@ function resumeFactory($http) {
 				function success(response){
 					return response;
 				}
-	};
+	}
 
 	var service = {
 		GET: getResInfo
@@ -28,4 +30,4 @@ function resumeFactory($http) {
 	return service;
 }
 
-module.exports = angular.module('resumeFactory');
+module.exports = angular.module(name);

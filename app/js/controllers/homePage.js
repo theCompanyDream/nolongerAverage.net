@@ -10,12 +10,12 @@ function homePageController($scope) {
 	};
 
 	$scope.menus = [
-	 {name: "Home", location: "#"}
-	,{name: "About", location: "aboutme"}
-	,{name: "Events", location: "events"}
-	,{name: "Story", location: "novel"}
-	,{name: "API", location: "api"}
-	,{name: "Contact Us", location: "contact"}];
+	 {name: "Home", location: "#"},
+	 {name: "About", location: "aboutme"},
+	 {name: "Events", location: "events"},
+	 {name: "Story", location: "novel"},
+	 {name: "API", location: "api"},
+	 {name: "Contact Us", location: "contact"}];
 
 }
 
