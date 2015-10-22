@@ -1,7 +1,7 @@
 var name = 'app.common.Info';
 
-var angular = require('angular');
-require('angular-ui-router');
+import angular from 'angular';
+import angularUI from 'angular-ui-router';
 
 angular.module(name, ['ngRoute'])
 	.factory("resumeFactory", resumeFactory);
@@ -30,4 +30,4 @@ function resumeFactory($http) {
 	return service;
 }
 
-module.exports = angular.module(name);
+module.exports = name;

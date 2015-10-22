@@ -15,5 +15,4 @@ angular.module('baseApp', ['ngRoute', 'ui.bootstrap', 'ngSanitize','app.common.I
 		.controller("aboutme", aboutPageController)
 		.controller("notImplemented", notImplemented)
 		.controller("splashPageController", splashPageController)
-		.controller("aboutme", aboutMe)
 		.config(configuration);
