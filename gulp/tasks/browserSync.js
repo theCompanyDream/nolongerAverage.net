@@ -11,20 +11,7 @@ gulp.task('browserSync', ['nodemon'], function() {
   const ASSET_EXTENSIONS = ['js', 'css', 'png', 'jpg', 'jpeg', 'gif'];
 
   browserSync.init({
-    server: {
-      baseDir: config.buildDir,
-      proxy: "http://localhost:69233",
-      middleware: function(req, res, next) {
-        let fileHrefArray = url.parse(req.url).href.split('.');
-        let fileExtension = fileHrefArray[fileHrefArray.length - 1];
-
-        if ( ASSET_EXTENSIONS.indexOf(fileExtension) === -1 ) {
-          req.url = '/' + DEFAULT_FILE;
-        }
-
-        return next();
-      }
-    },
+    proxy: "http://localhost:6923",
     browser: "google chrome",
   	port: config.browserPort,
   	ui: {
