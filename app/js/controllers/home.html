@@ -1,0 +1,15 @@
+<div class="header-slider">
+	<div class="slides-container text-slider-section">
+    	<uib-carousel interval="interval" no-wrap="noWrapSlides">
+    		<uib-slide ng-repeat="slide in sliderPhrases" class="text-slider">
+    			<div class="slide-item">
+    				<h2 class="maintitle">{{slide}}</h2>
+					<p class="subtitle">
+    					<a class="roll-button button-slider" ng-model="startingPoint">{{startingPoint}}</a>
+					</p>	
+				</div>
+    		</uib-slide>
+    	</uib-carousel>
+	</div>
+</div>
+
