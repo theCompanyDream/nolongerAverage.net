@@ -8,7 +8,7 @@ export default {
   sourceDir: './app/',
   buildDir: './public/',
   serverDir: './server/',
-  serverApp: './bin/app.js',
+  serverApp: 'server/bin/www',
 
   styles: {
     src: 'app/styles/**/*.scss',

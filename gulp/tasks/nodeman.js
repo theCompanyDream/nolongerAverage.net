@@ -6,7 +6,7 @@ import nodemon from 'gulp-nodemon';
 
 gulp.task('nodemon', function (cb) {
 	return nodemon({
-	  script: 'server/bin/www'
+	  script: config.serverApp
 	})
 	.on('start', function () {
       cb();
