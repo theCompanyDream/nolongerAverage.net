@@ -5,7 +5,7 @@ import url         from 'url';
 import browserSync from 'browser-sync';
 import gulp        from 'gulp';
 
-gulp.task('browserSync', ['nodemon'], function() {
+gulp.task('browserSync', function() {
 
   const DEFAULT_FILE = 'index.html';
   const ASSET_EXTENSIONS = ['js', 'css', 'png', 'jpg', 'jpeg', 'gif'];

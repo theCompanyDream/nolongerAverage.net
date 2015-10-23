@@ -3,7 +3,7 @@
 import config from '../config';
 import gulp   from 'gulp';
 
-gulp.task('watch', ['browserSync'], function() {
+gulp.task('watch', ['browserSync', 'nodeman'], function() {
 
   // Scripts are automatically watched and rebundled by Watchify inside Browserify task
   gulp.watch(config.scripts.src, ['lint']);

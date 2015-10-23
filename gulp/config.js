@@ -2,8 +2,8 @@
 
 export default {
 
-  browserPort: 6500,
-  UIPort: 6501,
+  browserPort: 7000,
+  UIPort: 7000,
 
   sourceDir: './app/',
   buildDir: './public/',
@@ -33,9 +33,9 @@ export default {
   },
 
   views: {
-    index: 'server/views/*',
-    src: 'server/views/*',
-    dest: 'app/views'
+    index: 'app/views/*',
+    src: 'app/views/**/*',
+    dest: 'public/views'
   },
 
   gzip: {
