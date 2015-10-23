@@ -3,19 +3,19 @@ config.$inject = ['$routeProvider', "$locationProvider"];
 function config($routeProvider, $locationProvider) {
 	$routeProvider
 		.when('/', {
-			templateUrl: 'content/partials/home.html',
+			templateUrl: 'content/views/home.html',
 			controller: 'splashPageController'
 		})
 		.when('/events', {
-			templateUrl: 'content/partials/aboutme.html',
+			templateUrl: 'content/views/aboutme.html',
 			controller: 'notImplemented'
 		})
 		.when('/api', {
-			templateUrl: 'content/partials/aboutme.html',
+			templateUrl: 'content/views/aboutme.html',
 			controller: 'notImplemented'
 		})
 		.when('/aboutme', {
-			templateUrl: '/content/partials/aboutMe.html',
+			templateUrl: '/content/views/aboutMe.html',
 			controller: 'aboutme'
 		});
 
