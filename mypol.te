@@ -1,0 +1,11 @@
+
+module mypol 1.0;
+
+require {
+	type openvpn_t;
+	type user_home_t;
+	class file open;
+}
+
+#============= openvpn_t ==============
+allow openvpn_t user_home_t:file open;
