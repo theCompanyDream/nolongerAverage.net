@@ -10,6 +10,10 @@ export default {
   serverDir: './',
   serverApp: './bin/www',
 
+  apps : {
+    src: '/apps'
+  },
+
   styles: {
     src: 'app/styles/**/*.scss',
     dest: 'public/css',
