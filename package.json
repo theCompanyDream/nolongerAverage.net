@@ -15,5 +15,10 @@
     "jade": "~1.9.2",
     "morgan": "~1.5.3",
     "serve-favicon": "~2.2.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.9.11",
+    "express-node_modules": "^0.2.0",
+    "gulp-nodemon": "^2.0.4"
   }
 }
