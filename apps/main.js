@@ -1,4 +1,4 @@
-import fs          from 'fs';
+var homeApp = require('./homeApp/index');
 
 
-
+module.exports = homeApp;
