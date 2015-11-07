@@ -20,6 +20,10 @@ function config($routeProvider, $locationProvider) {
 		.when('/aboutme', {
 			templateUrl: '/content/partials/aboutMe.html',
 			controller: 'aboutme'
+		})
+		.when('/contact',{
+			templateUrl: '/content/partials/contactUs.html',
+			controller: 'contact'
 		});
 
 	$locationProvider.html5Mode(true).hashPrefix("!");

@@ -2,10 +2,12 @@ angular.module("baseApp")
 		.controller("homePageController", homePageController)
 		.controller("notImplemented", notImplemented)
 		.controller("splashPageController", splashPageController)
-		.controller("aboutme", aboutMe);
+		.controller("aboutme", aboutMe)
+		.controller("contact", contactController);
 
 aboutMe.$inject = ['$scope','resumeFactory', '$sce'];
 homePageController.$inject = ['$scope'];
+contactController.$inject = ['$scope'];
 notImplemented.$inject = ['$scope'];
 splashPageController.$inject = ['$scope'];
 
@@ -31,6 +33,10 @@ function homePageController($scope) {
 }
 
 function notImplemented($scope) {
+	$scope.title = "Sorry Not notImplemented";
+}
+
+function contactController($scope) {
 	$scope.title = "Sorry Not notImplemented";
 }
 
