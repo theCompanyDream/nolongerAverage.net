@@ -23,10 +23,10 @@ function homePageController($scope) {
 	$scope.menus = [
 	 {name: "Home", location: "#"}
 	,{name: "About", location: "aboutme"}
-	,{name: "Events", location: "events"}
-	,{name: "Story", location: "novel"}
-	,{name: "API", location: "api"}
-	,{name: "Contact Us", location: "contact"}];
+//	,{name: "Events", location: "events"}
+	//,{name: "Story", location: "novel"}
+	//,{name: "API", location: "api"}
+	,{name: "Contact Me", location: "contact"}];
 
 }
 
@@ -35,7 +35,7 @@ function notImplemented($scope) {
 }
 
 function splashPageController($scope) {
-	$scope.sliderPhrases = 
+	$scope.sliderPhrases =
 	[
 		"What could be here?",
 		"Is this the End?",
@@ -45,7 +45,7 @@ function splashPageController($scope) {
 
 	$scope.startingPoint = "Press This";
 	//seconds timer
-	$scope.interval = 2000; 
+	$scope.interval = 2000;
 }
 
 function aboutMe($scope, resumeFactory, $sce) {
