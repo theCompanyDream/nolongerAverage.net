@@ -2,12 +2,10 @@ angular.module("baseApp")
 		.controller("homePageController", homePageController)
 		.controller("notImplemented", notImplemented)
 		.controller("splashPageController", splashPageController)
-		.controller("aboutme", aboutMe)
-		.controller("contact", contactController);
+		.controller("aboutme", aboutMe);
 
-aboutMe.$inject = ['$scope','resumeFactory', '$sce'];
+aboutMe.$inject = ['$scope','resumeFactory', '$sce', '$routeParams'];
 homePageController.$inject = ['$scope'];
-contactController.$inject = ['$scope'];
 notImplemented.$inject = ['$scope'];
 splashPageController.$inject = ['$scope'];
 
@@ -24,19 +22,15 @@ function homePageController($scope) {
 
 	$scope.menus = [
 	 {name: "Home", location: "#"}
-	,{name: "About", location: "aboutme"}
+	,{name: "About", location: "aboutme/info"}
 //	,{name: "Events", location: "events"}
 	//,{name: "Story", location: "novel"}
 	//,{name: "API", location: "api"}
-	,{name: "Contact Me", location: "contact"}];
+	,{name: "Contact Me", location: "aboutme/contact"}];
 
 }
 
 function notImplemented($scope) {
-	$scope.title = "Sorry Not notImplemented";
-}
-
-function contactController($scope) {
 	$scope.title = "Sorry Not notImplemented";
 }
 
@@ -54,18 +48,23 @@ function splashPageController($scope) {
 	$scope.interval = 2000;
 }
 
-function aboutMe($scope, resumeFactory, $sce) {
+function aboutMe($scope, resumeFactory, $sce, $routeParams) {
 	var vm = this;
 	vm.title = "";
 	vm.description = "";
 	vm.Image = "";
 
-	resumeFactory.GET()
-		.then(function (json) {
-	 		var data = json.data;
-	 	    $scope.title = data.title;
-	 	    $scope.description = $sce.trustAsHtml(data.description)
-	 	    $scope.experience = data.experience;
-	 	});
+	if($routeParams.Id == 'info')
+		resumeFactory.GETResume()
+			.then(parseJSON);
+	else if($routeParams.Id = 'contact')
+		resumeFactory.GETContacts()
+			.then(parseJSON);
 
+		function parseJSON(json) {
+				var data = json.data;
+					$scope.title = data.title;
+					$scope.description = $sce.trustAsHtml(data.description)
+					$scope.experience = data.experience;
+			}
 }

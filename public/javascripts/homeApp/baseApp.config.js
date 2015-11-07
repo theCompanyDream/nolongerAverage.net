@@ -9,21 +9,9 @@ function config($routeProvider, $locationProvider) {
 			templateUrl: 'content/partials/home.html',
 			controller: 'splashPageController'
 		})
-		.when('/events', {
-			templateUrl: 'content/partials/aboutme.html',
-			controller: 'notImplemented'
-		})
-		.when('/api', {
-			templateUrl: 'content/partials/aboutme.html',
-			controller: 'notImplemented'
-		})
-		.when('/aboutme', {
+		.when('/aboutme/:Id', {
 			templateUrl: '/content/partials/aboutMe.html',
 			controller: 'aboutme'
-		})
-		.when('/contact',{
-			templateUrl: '/content/partials/contactUs.html',
-			controller: 'contact'
 		});
 
 	$locationProvider.html5Mode(true).hashPrefix("!");

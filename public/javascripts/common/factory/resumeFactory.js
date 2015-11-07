@@ -4,9 +4,9 @@ angular.module("app.common.Info", ['ngRoute'])
 resumeFactory.$inject = ['$http'];
 
 function resumeFactory($http) {
-	function getResInfo()
+	function getResInfo(location)
 	{
-		return $http.get("/content/api/aboutme.json", 
+		return $http.get(location,
 				[{
 					"Content-Type" : "application/json",
 					"Accept" : "application/json"
@@ -19,8 +19,13 @@ function resumeFactory($http) {
 	};
 
 	var service = {
-		GET: getResInfo
-	};
+			GETResume: function () {
+				return getResInfo("/content/api/aboutme.json");
+			},
+			GETContacts: function () {
+				return getResInfo("/content/api/contact.json");
+			}
+			};
 
-	return service;
+			return service;
 }
