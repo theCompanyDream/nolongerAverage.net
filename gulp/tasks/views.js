@@ -1,9 +1,9 @@
 'use strict';
 
-import config        from '../config';
-import gulp          from 'gulp';
-import browserSync   from 'browser-sync';
-import templateCache from 'gulp-angular-templatecache';
+var config        = require('../config');
+var gulp          = require('gulp');
+var browserSync   = require('browser-sync');
+var templateCache = require('gulp-angular-templatecache');
 
 // Views task
 gulp.task('views', function() {
@@ -12,7 +12,7 @@ gulp.task('views', function() {
   gulp.src(config.views.index)
     .pipe(gulp.dest(config.buildDir));
 
-  // Process any other view files from app/views
+  // Process any other view files = app/views
   return gulp.src(config.views.src)
     .pipe(templateCache({
       standalone: true

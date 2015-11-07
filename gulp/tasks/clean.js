@@ -1,11 +1,20 @@
 'use strict';
 
-import config from '../config';
-import gulp   from 'gulp';
-import del    from 'del';
+var config = require('../config');
+var gulp   = require('gulp');
+var del    = require('del');
 
-gulp.task('clean', function(cb) {
+module.exports = clean;
+
+function clean(config, cb) {
 
   del([config.buildDir], cb);
 
 });
+
+
+// gulp.task('clean', function(cb) {
+//
+//   del([config.buildDir], cb);
+//
+// });

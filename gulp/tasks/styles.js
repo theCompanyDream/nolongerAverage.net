@@ -1,13 +1,13 @@
 'use strict';
 
-import config       from '../config';
-import gulp         from 'gulp';
-import gulpif       from 'gulp-if';
-import sourcemaps   from 'gulp-sourcemaps';
-import sass         from 'gulp-sass';
-import handleErrors from '../util/handleErrors';
-import browserSync  from 'browser-sync';
-import autoprefixer from 'gulp-autoprefixer';
+var config       = require('../config');
+var gulp         = require('gulp');
+var gulpif       = require('gulp-if');
+var sourcemaps   = require('gulp-sourcemaps');
+var sass         = require('gulp-sass');
+var handleErrors = require('../util/handleErrors');
+var browserSync  = require('browser-sync');
+var autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('styles', function () {
 

@@ -1,11 +1,13 @@
 'use strict';
 
-import config      from '../config';
-import changed     from 'gulp-changed';
-import gulp        from 'gulp';
-import browserSync from 'browser-sync';
+var config      = require('../config');
+var changed     = require('gulp-changed');
+var gulp        = require('gulp');
+var browserSync = require('browser-sync');
 
-gulp.task('fonts', function() {
+gulp.task('fonts',
+
+module.exports = function() {
 
   return gulp.src(config.fonts.src)
     .pipe(changed(config.fonts.dest)) // Ignore unchanged files

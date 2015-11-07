@@ -1,11 +1,14 @@
 'use strict';
 
-import config      from '../config';
-import url         from 'url';
-import browserSync from 'browser-sync';
-import gulp        from 'gulp';
 
-gulp.task('browserSync', function() {
+var url         = require('url');
+var browserSync = require('browser-sync');
+var gulp        = require('gulp');
+
+module.exports = browserSync;
+
+
+function browserSync() {
 
   const DEFAULT_FILE = 'index.html';
   const ASSET_EXTENSIONS = ['js', 'css', 'png', 'jpg', 'jpeg', 'gif'];
@@ -20,6 +23,8 @@ gulp.task('browserSync', function() {
     ghostMode: {
       links: false
     }
-  });
+  }
 
-});
+// gulp.task('browserSync', );
+//
+// });

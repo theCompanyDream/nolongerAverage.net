@@ -1,8 +1,8 @@
 'use strict';
 
-import config from '../config';
-import gulp   from 'gulp';
-import karma  from 'gulp-karma';
+var config = require('../config');
+var gulp   = require('gulp');
+var karma  = require('gulp-karma');
 
 gulp.task('unit', ['views'], function() {
 

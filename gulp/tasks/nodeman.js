@@ -1,8 +1,8 @@
 'use strict';
 
-import config  from '../config';
-import gulp         from 'gulp';
-import nodemon from 'gulp-nodemon';
+var config  = require('../config');
+var gulp         = require('gulp');
+var nodemon = require('gulp-nodemon');
 
 gulp.task('nodemon', function (cb) {
 	return nodemon({
