@@ -6,5 +6,10 @@
 		"organization" : "Linked In",
 		"title" : "Linked In",
 		"content" : "this is my facebook link"
+	},{
+		"link" : "https://github.com/theCompanyDream",
+		"organization" : "Github",
+		"title" : "Git",
+		"content" : "This is the link to my github account"
 	}]
 }
