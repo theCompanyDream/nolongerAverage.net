@@ -1,6 +1,5 @@
 angular.module("baseApp")
 		.controller("homePageController", homePageController)
-		.controller("notImplemented", notImplemented)
 		.controller("splashPageController", splashPageController)
 		.controller("aboutme", aboutMe);
 
@@ -26,10 +25,6 @@ function homePageController($scope, $location) {
 	,{name: "About", location: "aboutme/info"}
 	,{name: "Contact Me", location: "aboutme/contact"}];
 
-}
-
-function notImplemented($scope) {
-	$scope.title = "Sorry Not notImplemented";
 }
 
 function splashPageController($scope) {
