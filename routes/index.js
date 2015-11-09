@@ -6,8 +6,6 @@ function getIndex(req, res) {
   next();
 }
 
-
-
 /* GET home page. the only page*/
 router.all('/',     getIndex);
 router.all('/aboutme/:Id', getIndex);
