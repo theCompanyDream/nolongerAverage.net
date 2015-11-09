@@ -5,14 +5,15 @@ angular.module("baseApp")
 		.controller("aboutme", aboutMe);
 
 aboutMe.$inject = ['$scope','resumeFactory', '$sce', '$routeParams'];
-homePageController.$inject = ['$scope'];
+homePageController.$inject = ['$scope', "$location"];
 notImplemented.$inject = ['$scope'];
 splashPageController.$inject = ['$scope'];
 
-function homePageController($scope) {
+function homePageController($scope, $location) {
+
 	$scope.title = "Timothy Brantley super awesome website :)";
 	$scope.description = "This website is here to show case my ability as a developer";
-	$scope.showHeader = true;
+	$scope.showHeader = $location.$$path == '/';
 	$scope.headerImage = "/content/images/1.jpg";
 
 	$scope.toggleHeader = function(menuItem)
@@ -23,9 +24,6 @@ function homePageController($scope) {
 	$scope.menus = [
 	 {name: "Home", location: "#"}
 	,{name: "About", location: "aboutme/info"}
-//	,{name: "Events", location: "events"}
-	//,{name: "Story", location: "novel"}
-	//,{name: "API", location: "api"}
 	,{name: "Contact Me", location: "aboutme/contact"}];
 
 }
@@ -52,7 +50,6 @@ function aboutMe($scope, resumeFactory, $sce, $routeParams) {
 	var vm = this;
 	vm.title = "";
 	vm.description = "";
-	vm.Image = "";
 
 	if($routeParams.Id == 'info')
 		resumeFactory.GETResume()
