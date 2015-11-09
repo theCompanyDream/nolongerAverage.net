@@ -23,5 +23,42 @@
 		"link": "http://www.velir.com/",
 		"dateEnded": "May 2015"
 		}],
-	"Skills": []
+	"skills": [{
+		"name" : "C#",
+		"tags" : ["Static Typed Language"],
+		"time" : 2
+		},
+		{
+			"name" : "Node.js",
+			"time" : 1
+		},
+		{
+			"name" : "Angular JS",
+			"time" : 1
+		},{
+			"name" : "Java",
+			"time" : 2
+		},{
+			"name" : "HTML5,CSS,Javascript",
+			"time" : 2
+		},{
+			"name" : "Python",
+			"time" : 1
+		},{
+			"name" : "PHP",
+			"time" : 1
+		},{
+			"name" : "JQuery",
+			"time" : 2
+		},{
+			"name" : "mongo",
+			"time" : 2
+		},{
+		"name" : "MySQL,Microsoft SQLServer,PostGress",
+		"time" : 3
+	},{
+		"name" : "Unreal Engine",
+		"time" : 1
+	}
+	]
 }
