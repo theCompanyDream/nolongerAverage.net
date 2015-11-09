@@ -25,11 +25,16 @@
 		}],
 	"skills": [{
 		"name" : "C#",
-		"tags" : ["Static Typed Language"],
+			"tags" : ["Static Typed Language", "C#", "Server Languages"],
 		"time" : 2
-		},
+		},{
+			"name" : "C# MVC/Web API",
+			"tags" : ["Static Typed Language", "C#", "Server Languages"],
+			"time" : 2
+			},
 		{
 			"name" : "Node.js",
+			"tags" : ["Static Typed Language", "C#", "Server Languages"],
 			"time" : 1
 		},
 		{
@@ -38,6 +43,9 @@
 		},{
 			"name" : "Java",
 			"time" : 2
+		},{
+			"name" : "Maven",
+			"time" : 1
 		},{
 			"name" : "HTML5,CSS,Javascript",
 			"time" : 2
@@ -59,6 +67,5 @@
 	},{
 		"name" : "Unreal Engine",
 		"time" : 1
-	}
-	]
+	}]
 }
