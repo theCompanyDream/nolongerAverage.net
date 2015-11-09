@@ -8,6 +8,7 @@ function getIndex(req, res) {
 
 /* GET home page. the only page*/
 router.all('/',     getIndex);
-router.all('/aboutme/:Id', getIndex);
+router.all('/aboutme/*', getIndex);
+router.all('/about/*');
 
 module.exports = router;
