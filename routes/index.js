@@ -9,5 +9,6 @@ function getIndex(req, res) {
 /* GET home page. the only page*/
 router.all('/',     getIndex);
 router.all('/aboutme/:Id', getIndex);
+router.all('/resume/:Id', getIndex);
 
 module.exports = router;

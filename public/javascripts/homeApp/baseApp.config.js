@@ -11,7 +11,11 @@ function config($routeProvider, $locationProvider) {
 		})
 		.when('/aboutme/:Id', {
 			templateUrl: '/content/partials/aboutMe.html',
-			controller: 'aboutme'
+			controller: 'aboutmeController'
+		})
+		.when('resume', {
+			templateUrl: '/content/partials/resume.html',
+			controller: 'resumeController'
 		});
 
 	$locationProvider.html5Mode(true).hashPrefix("!");

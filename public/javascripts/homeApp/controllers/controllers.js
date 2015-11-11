@@ -1,12 +1,13 @@
 angular.module("baseApp")
 		.controller("homePageController", homePageController)
 		.controller("splashPageController", splashPageController)
-		.controller("aboutme", aboutMe);
+		.controller("aboutmeController", aboutMe)
+		.controller("resumeController", resumeController);
 
 aboutMe.$inject = ['$scope','resumeFactory', '$sce', '$routeParams'];
 homePageController.$inject = ['$scope', "$location"];
-notImplemented.$inject = ['$scope'];
 splashPageController.$inject = ['$scope'];
+resumeController.$inject = ['$scope','resumeFactory', '$sce', '$routeParams'];
 
 function homePageController($scope, $location) {
 
@@ -23,7 +24,9 @@ function homePageController($scope, $location) {
 	$scope.menus = [
 	 {name: "Home", location: "#"}
 	,{name: "About", location: "aboutme/info"}
-	,{name: "Contact Me", location: "aboutme/contact"}];
+	,{name: "Resume", location: "resume"}
+	,{name: "Contact Me", location: "aboutme/contact"}
+];
 
 }
 
@@ -59,4 +62,9 @@ function aboutMe($scope, resumeFactory, $sce, $routeParams) {
 					$scope.description = $sce.trustAsHtml(data.description)
 					$scope.experience = data.experience;
 			}
+}
+
+function resumeController($scope, resumeFactory, $sce, $routeParams)
+{
+
 }
