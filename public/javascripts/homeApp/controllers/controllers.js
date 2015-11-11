@@ -64,7 +64,19 @@ function aboutMe($scope, resumeFactory, $sce, $routeParams) {
 			}
 }
 
-function resumeController($scope, resumeFactory, $sce, $routeParams)
+function resumeController($scope, resumeFactory, $sce)
 {
+		var vm = this;
+		vm.title = "";
+		vm.description = "";
 
+		resumeFactory.GETResume()
+			.then(parseJSON);
+
+		function parseJSON(json) {
+			var data = json.data;
+			$scope.title = data.title;
+			$scope.experience = data.experience;
+			$scope.skills = data.skills;
+		}
 }
