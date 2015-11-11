@@ -1,0 +1,22 @@
+{
+  "name": "bower",
+  "description": "Components for bower installs",
+  "main": "bower.json",
+  "authors": [
+    "Timothy Brantley II"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/theCompanyDream/nolongerAverage.net",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.7",
+    "TicTacToe": "https://github.com/theCompanyDream/TicTacToe.git"
+  }
+}
