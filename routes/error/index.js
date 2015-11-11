@@ -2,14 +2,13 @@ var express = require('express');
 var safeMessage = require('./safeMessage');
 var logger = require('winston');
 
-// catch 404 and forward to error handle
 module.exports = buildErrorHandler;
 // development error handler
 // will print stacktrace
 
 function buildErrorHandler(env){
   var app = express();
-  app.use(notFound);
+
   if (env === 'development') {
     app.use(processError);
   }
@@ -17,21 +16,22 @@ function buildErrorHandler(env){
     app.use(logError);
     app.use(productionError);
   }
+
+  app.use(notFound);
+
   return app;
 }
 
 
-// production error handler
-// no stacktraces leaked to user
-
-
+// catch 404 and forward to error handle
 function notFound(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
-  res.render('error', {error: err});
-  next(err);
+  res.status(404).render('error', {error: err});
 }
 
+// production error handler
+// no stacktraces leaked to user
 function processError(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error', {

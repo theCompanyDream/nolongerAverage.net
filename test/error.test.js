@@ -1,4 +1,4 @@
-var error = require('../routes/error');
+var error = require('../routes/error/index');
 var express = require('express');
 var request = require('supertest');
 var correctMessages = require('../routes/error/safeMessage');
@@ -20,21 +20,31 @@ describe('#Correct_Error_Message', function (){
   });
 
   app.use(routes);
-  //app.use(error('production'));
+  app.use(error('production'));
 
-  it("#Throws_Error_Message", function () {
+  it("#Throws_Internal_Server_Message", function () {
     return request(app).get('/exception')
-        .expect(500);
-  });
-
-  it("#Throws_Not_Authorized", function () {
-    return request(app).get('/doesNotExist')
-        .expect(404);
+        .expect('Content-Type', 'text/html; charset=utf-8')
+        .expect(500)
+        .end(error);
   });
 
   it("#Throws_NotFound", function () {
+    return request(app).get('/doesNotExist')
+        .expect('Content-Type', 'text/html; charset=utf-8')
+        .expect(404)
+        .end(error);
+  });
+
+  it("#Throws_Not_Authorized", function () {
     return request(app).get('/authorize')
-        .expect(401);
+        .expect('Content-Type', 'text/html; charset=utf-8')
+        .expect(401)
+        .end(error);
   });
 
 });
+
+function error (err, res) {
+  if(err) throw err;
+}
