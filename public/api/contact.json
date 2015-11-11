@@ -6,16 +6,19 @@
 	"organization" : "Email",
 	"title" : "Email Address"
 	},{
+
 		"link" : "https://www.linkedin.com/pub/timothy-brantley-ii/28/632/222",
 		"organization" : "Linked In",
 		"title" : "Linked In",
 		"content" : "this is my facebook link"
 	},{
+		"id" : "1",
 		"link" : "https://github.com/theCompanyDream",
 		"organization" : "Github",
 		"title" : "Git",
 		"content" : "This is the link to my github account"
 	},{
+		"id" : "2",
 		"link" : "https://twitter.com/thecompanydream",
 		"organization" : "Twitter",
 		"title" : "At My Twitter Name",
