@@ -17,7 +17,8 @@ describe('#SinglePageApp', function() {
       {args: ['/about/fasdf']},
       {args: ['/about/info']},
       {args: ['/aboutme/E#ESfdsa']},
-      {args: ['/aboutme/asdfa']}
+      {args: ['/aboutme/asdfa']},
+      {args: ['/aboutme/asdfsfa']}
     ];
 
     testURLs.forEach(function(test) {
