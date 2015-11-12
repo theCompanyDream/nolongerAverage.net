@@ -1,4 +1,3 @@
-var should = require('should');
 var request = require('supertest');
 var express = require('express');
 var async = require('async');
